@@ -8,52 +8,167 @@
     </button>
     <button pButton icon="pi pi-save px-2">Guardar</button>
   </p-menubar>
-  <div class="card p-4">
+  <form class="card p-4" [formGroup]="formulario">
     <div class="grid p-fluid">
+      <!-- primer columna -->
       <div class="col-12 md:col-4 gap-4">
-        <div class="p-inputgroup">
-          <input type="text" pInputText placeholder="Nombre o CUIT" />
-          <button
-            type="button"
-            pButton
-            pRipple
-            icon="pi pi-cloud-download"
-            styleClass="p-button-warn"
-          ></button>
+        <!-- name -->
+        <div class="col m-0 p-0">
+          <div class="p-inputgroup">
+            <input
+              type="text"
+              pInputText
+              placeholder="Nombre o CUIT"
+              formControlName="name"
+              [class.ng-invalid]="
+                formulario.get('name')?.touched &&
+                formulario.get('name')?.hasError('required')
+              "
+            />
+
+            <button
+              type="button"
+              pButton
+              pRipple
+              icon="pi pi-cloud-download"
+            ></button>
+          </div>
+          <span
+            [ngClass]="
+              formulario.get('name')?.touched &&
+              formulario.get('name')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >El campo nombre o CUIT, es requerido</span
+          >
         </div>
-        <div class="p-inputgroup mt-2">
-          <input type="text" pInputText placeholder="Dirección" />
+        <!-- direction -->
+        <div class="col m-0 p-0">
+          <div class="p-inputgroup mt-2">
+            <input
+              type="text"
+              pInputText
+              placeholder="Dirección"
+              formControlName="direction"
+              [class.ng-invalid]="
+                formulario.get('direction')?.touched &&
+                formulario.get('direction')?.hasError('required')
+              "
+            />
+          </div>
+          <span
+            [ngClass]="
+              formulario.get('direction')?.touched &&
+              formulario.get('direction')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >El campo dirección es requerido</span
+          >
         </div>
-        <div class="mt-2">
+        <!-- city -->
+        <div class="mt-2 col p-0">
           <p-dropdown
             formControlName="city"
             [options]="cities"
             optionLabel="name"
+            [class.ng-invalid]="
+              formulario.get('city')?.touched &&
+              formulario.get('city')?.hasError('required')
+            "
           ></p-dropdown>
+          <span
+            [ngClass]="
+              formulario.get('city')?.touched &&
+              formulario.get('city')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >Elija una opción</span
+          >
         </div>
-        <div class="p-inputgroup mt-2">
-          <input type="text" pInputText placeholder="Celular" />
+        <!-- phone -->
+        <div class="col p-0">
+          <div class="p-inputgroup mt-2">
+            <input
+              type="text"
+              pInputText
+              placeholder="Celular"
+              formControlName="phone"
+              [class.ng-invalid]="
+                formulario.get('phone')?.touched &&
+                formulario.get('phone')?.hasError('required')
+              "
+            />
+          </div>
+          <span
+            [ngClass]="
+              formulario.get('phone')?.touched &&
+              formulario.get('phone')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >El campo celular es requerido</span
+          >
         </div>
-        <div class="p-inputgroup mt-2">
-          <input type="text" pInputText placeholder="Teléfono 1" />
+        <!-- web site -->
+        <div class="col p-0">
+          <div class="p-inputgroup mt-2">
+            <input
+              type="text"
+              pInputText
+              placeholder="Sitio Web"
+              formControlName="webSite"
+              [class.ng-invalid]="
+                formulario.get('webSite')?.touched &&
+                formulario.get('webSite')?.hasError('required')
+              "
+            />
+          </div>
+          <span
+            [ngClass]="
+              formulario.get('webSite')?.touched &&
+              formulario.get('webSite')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >El campo sitio web es requerido</span
+          >
         </div>
-        <div class="p-inputgroup mt-2">
-          <input type="text" pInputText placeholder="Teléfono 2" />
-        </div>
-        <div class="p-inputgroup mt-2">
-          <input type="text" pInputText placeholder="Sitio Web" />
-        </div>
-        <div class="p-inputgroup mt-2">
-          <input type="text" pInputText placeholder="Ino. Brut" />
+        <!-- ino.bruto -->
+        <div class="col p-0">
+          <div class="p-inputgroup mt-2">
+            <input
+              type="text"
+              pInputText
+              placeholder="Ino. Brut"
+              formControlName="inoBruto"
+              [class.ng-invalid]="
+                formulario.get('inoBruto')?.touched &&
+                formulario.get('inoBruto')?.hasError('required')
+              "
+            />
+          </div>
+          <span
+            [ngClass]="
+              formulario.get('inoBruto')?.touched &&
+              formulario.get('inoBruto')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >El campo Ino. Bruto es requerido</span
+          >
         </div>
       </div>
 
+      <!-- segunda columna -->
       <div class="col-12 md:col-4 gap-4">
         <div class="">
           <p-dropdown
-            formControlName="city"
+            formControlName="iva"
             [options]="iva"
-            optionLabel="name"
+            optionLabel="type"
           ></p-dropdown>
         </div>
         <div class="col-12 flex gap-2 mt-2 p-0">
@@ -120,7 +235,7 @@
           </div>
         </div>
       </div>
-
+      <!-- tercer columna -->
       <div class="col-12 md:col-4 gap-4">
         <div class="p-inputgroup">
           <input type="text" pInputText placeholder="Fantasía" />
@@ -143,5 +258,5 @@
     <div class="border">
       <app-contactos></app-contactos>
     </div>
-  </div>
+  </form>
 </div>
