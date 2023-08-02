@@ -12,9 +12,9 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     this.items = [
       {
-        label: 'Inicio',
+        label: 'Dashboard',
         icon: 'pi pi-home',
-        routerLink: '/', // Ruta que se activará al hacer clic en el elemento
+        routerLink: '/dashboard',
         styleClass: 'custom-menu-item',
       },
       {
@@ -41,7 +41,7 @@ export class SidebarComponent implements OnInit {
       {
         label: 'Inicio',
         icon: 'pi pi-home',
-        routerLink: '/', // Ruta que se activará al hacer clic en el elemento
+        routerLink: '/',
       },
       {
         label: 'Cargar proveedor',

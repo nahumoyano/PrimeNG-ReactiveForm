@@ -1,9 +1,14 @@
-<div class="navbar">
-  <p-menubar [model]="items" styleClass="">
+<div class="navbar flex justify-content-between align-items-center px-4 py-2">
+  <i class="pi pi-bars" style="color: #fff"></i>
+  <div class="flex">
     <span class="p-input-icon-right mr-2">
       <input type="text" pInputText placeholder="Buscar" />
       <i class="pi pi-search"></i>
     </span>
-    <button pButton icon="pi pi-sign-in"></button>
-  </p-menubar>
+    <button
+      pButton
+      icon="pi pi-sign-in"
+      style="border: 1px solid #000"
+    ></button>
+  </div>
 </div>

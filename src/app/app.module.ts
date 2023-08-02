@@ -17,6 +17,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ContactosComponent } from './proveedores/components/contactos/contactos.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LinksTopComponent } from './dashboard/components/links-top/links-top.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +26,8 @@ import { ContactosComponent } from './proveedores/components/contactos/contactos
     SidebarComponent,
     CargarProveedorComponent,
     ContactosComponent,
+    DashboardComponent,
+    LinksTopComponent,
   ],
   imports: [
     BrowserModule,
