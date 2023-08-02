@@ -20,6 +20,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ContactosComponent } from './proveedores/components/contactos/contactos.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LinksTopComponent } from './dashboard/components/links-top/links-top.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { LinksTopComponent } from './dashboard/components/links-top/links-top.co
     TreeSelectModule,
     InputTextareaModule,
     SidebarModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
