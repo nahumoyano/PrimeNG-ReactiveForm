@@ -1,6 +1,15 @@
 .content {
   width: 100%;
 }
-.pSortableColumn {
-  font-size: 14px;
+th {
+  font-size: 13px;
+  /* display: flex; */
+}
+
+td {
+  font-size: 12px;
+}
+
+.i {
+  font-size: 12px;
 }

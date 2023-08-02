@@ -22,6 +22,30 @@ export class ModificarProveedorComponent implements OnInit {
         fantasia: 'fantasia',
         estado: 'Habilitado',
       },
+      {
+        num: 2,
+        nombre: 'Danilo',
+        cuit: 2033152978,
+        telefono: 323123123,
+        email: 'naku@gmail.com',
+        localidad: '',
+        provincia: 'Misiones',
+        tipo: '',
+        fantasia: 'fantasia',
+        estado: 'Habilitado',
+      },
+      {
+        num: 2,
+        nombre: 'Danilo',
+        cuit: 2033152978,
+        telefono: 323123123,
+        email: 'naku@gmail.com',
+        localidad: '',
+        provincia: 'Misiones',
+        tipo: '',
+        fantasia: 'fantasia',
+        estado: 'Deshabilitado',
+      },
     ];
   }
 

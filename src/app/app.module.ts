@@ -24,6 +24,7 @@ import { LinksTopComponent } from './dashboard/components/links-top/links-top.co
 import { ReactiveFormsModule } from '@angular/forms';
 import { ModificarProveedorComponent } from './proveedores/components/modificar-proveedor/modificar-proveedor.component';
 import { TableModule } from 'primeng/table';
+import { CambiarColorEnabledPipe } from './proveedores/pipes/cambiar-color-enabled.pipe';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { TableModule } from 'primeng/table';
     DashboardComponent,
     LinksTopComponent,
     ModificarProveedorComponent,
+    CambiarColorEnabledPipe,
   ],
   imports: [
     BrowserModule,

@@ -1,55 +1,55 @@
 <div class="m-4 content">
-  <p-menubar [model]="labels" class="">
-    <p-button routerLink="/agregar-provincia">
+  <p-menubar [model]="labels" class="m-4">
+    <p-button routerLink="/proveedores/cargar-proveedor">
       <i class="pi pi-plus mr-2"></i>
       Nuevo</p-button
     >
   </p-menubar>
   <p-table
     [value]="listados"
-    [tableStyle]="{ width: '95%' }"
+    [tableStyle]="{ 'min-width': '60rem' }"
     [paginator]="true"
     [rows]="5"
     [showCurrentPageReport]="true"
     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
     [rowsPerPageOptions]="[10, 25, 50]"
+    class="mt-2"
   >
     <ng-template pTemplate="header">
       <tr>
-        <th pSortableColumn="CP" style="width: 30%">
-          N° <p-sortIcon field="CP"></p-sortIcon>
+        <th pSortableColumn="CP">N° <p-sortIcon field="CP"></p-sortIcon></th>
+        <th pSortableColumn="ID">
+          Nombre
+          <p-sortIcon field="ID"></p-sortIcon>
         </th>
-        <th pSortableColumn="ID" style="width: 30%">
-          Nombre <p-sortIcon field="ID"></p-sortIcon>
-        </th>
-        <th pSortableColumn="CIUDADID" style="width: 30%">
+        <th pSortableColumn="CIUDADID">
           Cuit <p-sortIcon field="CIUDADID"></p-sortIcon>
         </th>
-        <th pSortableColumn="PROVINCIA" style="width: 30%">
+        <th pSortableColumn="PROVINCIA">
           Teléfono <p-sortIcon field="PROVINCIA"></p-sortIcon>
         </th>
-        <th pSortableColumn="PROVINCIA" style="width: 30%">
+        <th pSortableColumn="PROVINCIA">
           Email <p-sortIcon field="PROVINCIA"></p-sortIcon>
         </th>
-        <th pSortableColumn="PROVINCIA" style="width: 30%">
+        <th pSortableColumn="PROVINCIA">
           Dirección <p-sortIcon field="PROVINCIA"></p-sortIcon>
         </th>
-        <th pSortableColumn="PROVINCIA" style="width: 30%">
+        <th pSortableColumn="PROVINCIA">
           Localidad <p-sortIcon field="PROVINCIA"></p-sortIcon>
         </th>
-        <th pSortableColumn="PROVINCIA" style="width: 30%">
+        <th pSortableColumn="PROVINCIA">
           Provincia <p-sortIcon field="PROVINCIA"></p-sortIcon>
         </th>
-        <th pSortableColumn="PROVINCIA" style="width: 30%">
+        <th pSortableColumn="PROVINCIA">
           Tipo <p-sortIcon field="PROVINCIA"></p-sortIcon>
         </th>
-        <th pSortableColumn="PROVINCIA" style="width: 30%">
+        <th pSortableColumn="PROVINCIA">
           Fantasia <p-sortIcon field="PROVINCIA"></p-sortIcon>
         </th>
-        <th pSortableColumn="PROVINCIA">
+        <th pSortableColumn="PROVINCIA" class="pSortableColumn">
           Estado <p-sortIcon field="PROVINCIA"></p-sortIcon>
         </th>
-        <th style="">ACCIÓN <p-sortIcon></p-sortIcon></th>
+        <th>ACCIÓN <p-sortIcon></p-sortIcon></th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-listado>
@@ -64,7 +64,12 @@
         <td>{{ listado.provincia }}</td>
         <td>{{ listado.tipo }}</td>
         <td>{{ listado.fantasia }}</td>
-        <td>{{ listado.estado }}</td>
+        <td
+          [style.background-color]="listado.estado | cambiarColorEnabled"
+          style="color: #fff"
+        >
+          {{ listado.estado }}
+        </td>
         <td>
           <div class="card flex justify-content-center">
             <p-button [routerLink]="['/editar-provincia', listado.ID]"
