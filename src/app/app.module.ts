@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonModule } from 'primeng/button';
+import { SidebarModule } from 'primeng/sidebar';
 import { MenubarModule } from 'primeng/menubar';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { InputTextModule } from 'primeng/inputtext';
@@ -36,6 +37,7 @@ import { ContactosComponent } from './proveedores/components/contactos/contactos
     DropdownModule,
     TreeSelectModule,
     InputTextareaModule,
+    SidebarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

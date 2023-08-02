@@ -1,0 +1,11 @@
+.sidebar {
+  width: 100%;
+  background-color: #fff;
+  height: 100%;
+}
+
+/* app.component.css */
+.custom-menu-item .p-menuitem-link {
+  background-color: #ff0000; /* Cambiar el color de fondo a rojo para el elemento "Inicio" */
+  color: #ffffff; /* Cambiar el color del texto a blanco para el elemento "Inicio" */
+}
