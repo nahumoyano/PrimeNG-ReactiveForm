@@ -22,6 +22,9 @@ import { ContactosComponent } from './proveedores/components/contactos/contactos
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LinksTopComponent } from './dashboard/components/links-top/links-top.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ModificarProveedorComponent } from './proveedores/components/modificar-proveedor/modificar-proveedor.component';
+import { TableModule } from 'primeng/table';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ContactosComponent,
     DashboardComponent,
     LinksTopComponent,
+    ModificarProveedorComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SidebarModule,
     ReactiveFormsModule,
     ToastModule,
+    TableModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
