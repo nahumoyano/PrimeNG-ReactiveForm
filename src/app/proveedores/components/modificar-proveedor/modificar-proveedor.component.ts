@@ -8,7 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class ModificarProveedorComponent implements OnInit {
   labels: any[];
   listados: any[];
-  constructor() {}
+  constructor() {
+    this.listados = [
+      {
+        num: 1,
+        nombre: 'Danilo',
+        cuit: 2033152978,
+        telefono: 323123123,
+        email: 'naku@gmail.com',
+        localidad: '',
+        provincia: 'Misiones',
+        tipo: '',
+        fantasia: 'fantasia',
+        estado: 'Habilitado',
+      },
+    ];
+  }
 
   ngOnInit(): void {
     this.labels = [

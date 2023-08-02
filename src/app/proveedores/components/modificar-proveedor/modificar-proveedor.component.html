@@ -7,7 +7,7 @@
   </p-menubar>
   <p-table
     [value]="listados"
-    [tableStyle]="{ 'min-width': '60rem' }"
+    [tableStyle]="{ width: '95%' }"
     [paginator]="true"
     [rows]="5"
     [showCurrentPageReport]="true"
@@ -16,27 +16,55 @@
   >
     <ng-template pTemplate="header">
       <tr>
-        <th pSortableColumn="CP" style="width: 20%">
-          CP <p-sortIcon field="CP"></p-sortIcon>
+        <th pSortableColumn="CP" style="width: 30%">
+          N° <p-sortIcon field="CP"></p-sortIcon>
         </th>
-        <th pSortableColumn="ID" style="width: 20%">
-          ID <p-sortIcon field="ID"></p-sortIcon>
+        <th pSortableColumn="ID" style="width: 30%">
+          Nombre <p-sortIcon field="ID"></p-sortIcon>
         </th>
-        <th pSortableColumn="CIUDADID" style="width: 20%">
-          CIUDAD ID <p-sortIcon field="CIUDADID"></p-sortIcon>
+        <th pSortableColumn="CIUDADID" style="width: 30%">
+          Cuit <p-sortIcon field="CIUDADID"></p-sortIcon>
         </th>
-        <th pSortableColumn="PROVINCIA" style="width: 20%">
-          PROVINCIA <p-sortIcon field="PROVINCIA"></p-sortIcon>
+        <th pSortableColumn="PROVINCIA" style="width: 30%">
+          Teléfono <p-sortIcon field="PROVINCIA"></p-sortIcon>
         </th>
-        <th style="width: 20%">ACCIÓN <p-sortIcon></p-sortIcon></th>
+        <th pSortableColumn="PROVINCIA" style="width: 30%">
+          Email <p-sortIcon field="PROVINCIA"></p-sortIcon>
+        </th>
+        <th pSortableColumn="PROVINCIA" style="width: 30%">
+          Dirección <p-sortIcon field="PROVINCIA"></p-sortIcon>
+        </th>
+        <th pSortableColumn="PROVINCIA" style="width: 30%">
+          Localidad <p-sortIcon field="PROVINCIA"></p-sortIcon>
+        </th>
+        <th pSortableColumn="PROVINCIA" style="width: 30%">
+          Provincia <p-sortIcon field="PROVINCIA"></p-sortIcon>
+        </th>
+        <th pSortableColumn="PROVINCIA" style="width: 30%">
+          Tipo <p-sortIcon field="PROVINCIA"></p-sortIcon>
+        </th>
+        <th pSortableColumn="PROVINCIA" style="width: 30%">
+          Fantasia <p-sortIcon field="PROVINCIA"></p-sortIcon>
+        </th>
+        <th pSortableColumn="PROVINCIA">
+          Estado <p-sortIcon field="PROVINCIA"></p-sortIcon>
+        </th>
+        <th style="">ACCIÓN <p-sortIcon></p-sortIcon></th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-listado>
       <tr>
-        <td>{{ listado.CP }}</td>
-        <td>{{ listado.ID }}</td>
-        <td>{{ listado.CIUDADID }}</td>
-        <td>{{ listado.PROVINCIA }}</td>
+        <td>{{ listado.num }}</td>
+        <td>{{ listado.nombre }}</td>
+        <td>{{ listado.cuit }}</td>
+        <td>{{ listado.telefono }}</td>
+        <td>{{ listado.email }}</td>
+        <td>{{ listado.direccion }}</td>
+        <td>{{ listado.localidad }}</td>
+        <td>{{ listado.provincia }}</td>
+        <td>{{ listado.tipo }}</td>
+        <td>{{ listado.fantasia }}</td>
+        <td>{{ listado.estado }}</td>
         <td>
           <div class="card flex justify-content-center">
             <p-button [routerLink]="['/editar-provincia', listado.ID]"
