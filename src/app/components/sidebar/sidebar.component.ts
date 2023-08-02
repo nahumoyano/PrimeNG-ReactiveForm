@@ -18,35 +18,38 @@ export class SidebarComponent implements OnInit {
         styleClass: 'custom-menu-item',
       },
       {
-        label: 'Opciones',
-        icon: 'pi pi-cog',
+        label: 'Clientes',
+        icon: 'pi pi-user',
         items: [
           {
-            label: 'Opción 1',
-            icon: 'pi pi-file',
-            routerLink: '/opcion1',
-          },
-          {
-            label: 'Opción 2',
-            icon: 'pi pi-file',
-            routerLink: '/opcion2',
-          },
-          {
-            label: 'Opción 3',
-            icon: 'pi pi-file',
-            routerLink: '/opcion3',
+            label: 'Gestión de Clientes',
+
+            items: [
+              { label: 'Cargar Clientes', icon: 'pi pi-user' },
+              { label: 'Modificar Clientes', icon: 'pi pi-user' },
+              { label: 'Eliminar Clientes', icon: 'pi pi-user' },
+            ],
           },
         ],
       },
       {
-        label: 'Inicio',
-        icon: 'pi pi-home',
-        routerLink: '/',
-      },
-      {
-        label: 'Cargar proveedor',
-        icon: 'pi pi-plus',
-        routerLink: '/proveedores/cargar-proveedor',
+        label: 'Proveedores',
+        icon: 'pi pi-user-edit',
+        items: [
+          {
+            label: 'Gestión de Proveedores',
+
+            items: [
+              {
+                label: 'Cargar Proveedor',
+                icon: 'pi pi-user',
+                routerLink: '/proveedores/cargar-proveedor',
+              },
+              { label: 'Modificar Proveedor', icon: 'pi pi-user' },
+              { label: 'Eliminar Proveedor', icon: 'pi pi-user' },
+            ],
+          },
+        ],
       },
     ];
   }
