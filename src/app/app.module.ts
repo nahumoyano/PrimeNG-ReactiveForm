@@ -18,6 +18,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { DropdownModule } from 'primeng/dropdown';
 import { TreeSelectModule } from 'primeng/treeselect';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { MultiSelectModule } from 'primeng/multiselect';
 import { ContactosComponent } from './proveedores/components/contactos/contactos.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LinksTopComponent } from './dashboard/components/links-top/links-top.component';
@@ -25,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ModificarProveedorComponent } from './proveedores/components/modificar-proveedor/modificar-proveedor.component';
 import { TableModule } from 'primeng/table';
 import { CambiarColorEnabledPipe } from './proveedores/pipes/cambiar-color-enabled.pipe';
+import { TagModule } from 'primeng/tag';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { CambiarColorEnabledPipe } from './proveedores/pipes/cambiar-color-enabl
     ReactiveFormsModule,
     ToastModule,
     TableModule,
+    MultiSelectModule,
+    TagModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

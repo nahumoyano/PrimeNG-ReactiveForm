@@ -98,6 +98,7 @@
   <div class="card">
     <p-table
       #dt2
+      #table
       [value]="listados"
       dataKey="id"
       [rows]="10"
@@ -112,27 +113,93 @@
         'representative.name',
         'status'
       ]"
-      [tableStyle]="{ 'min-width': '75rem' }"
+      [tableStyle]="{ 'min-width': '45rem' }"
     >
       <ng-template pTemplate="header">
         <tr>
-          <th style="width: 22%">N°</th>
-          <th style="width: 22%">Nombre</th>
-          <th style="width: 22%">Teléfono</th>
-          <th style="width: 22%">Email</th>
-          <th style="width: 12%">Direccion</th>
+          <th pSortableColumn="num">
+            N° <p-sortIcon field="num"></p-sortIcon>
+          </th>
+          <th pSortableColumn="nombre">
+            Nombre
+            <p-sortIcon field="nombre"></p-sortIcon>
+          </th>
+          <th pSortableColumn="cuit">
+            Cuit <p-sortIcon field="cuit"></p-sortIcon>
+          </th>
+          <th pSortableColumn="telefono">
+            Teléfono <p-sortIcon field="telefono"></p-sortIcon>
+          </th>
+          <th pSortableColumn="email">
+            Email <p-sortIcon field="email"></p-sortIcon>
+          </th>
+          <th pSortableColumn="direccion">
+            Dirección <p-sortIcon field="direccion"></p-sortIcon>
+          </th>
+          <th pSortableColumn="localidad">
+            Localidad <p-sortIcon field="localidad"></p-sortIcon>
+          </th>
+          <th pSortableColumn="provincia">
+            Provincia <p-sortIcon field="provincia"></p-sortIcon>
+          </th>
+          <th pSortableColumn="tipo">
+            Tipo <p-sortIcon field="tipo"></p-sortIcon>
+          </th>
+          <th pSortableColumn="fantasia">
+            Fantasia <p-sortIcon field="fantasia"></p-sortIcon>
+          </th>
+          <th pSortableColumn="estado" class="pSortableColumn">
+            Estado <p-sortIcon field="estado"></p-sortIcon>
+          </th>
+          <th>ACCIÓN <p-sortIcon></p-sortIcon></th>
         </tr>
         <tr>
           <th>
             <p-columnFilter type="text" field="num"></p-columnFilter>
           </th>
           <th>
-            <p-columnFilter type="text" field="country.name"></p-columnFilter>
+            <p-columnFilter type="text" field="nombre"></p-columnFilter>
           </th>
           <th>
+            <p-columnFilter type="text" field="cuit"></p-columnFilter>
+          </th>
+          <th>
+            <p-columnFilter type="text" field="telefono"></p-columnFilter>
+          </th>
+          <th>
+            <p-columnFilter type="text" field="email"></p-columnFilter>
+          </th>
+          <th>
+            <p-columnFilter type="text" field="direccion"></p-columnFilter>
+          </th>
+          <th>
+            <p-columnFilter type="text" field="localidad"></p-columnFilter>
+          </th>
+          <th>
+            <p-columnFilter type="text" field="provincia"></p-columnFilter>
+          </th>
+          <th>
+            <p-columnFilter type="text" field="tipo"></p-columnFilter>
+          </th>
+          <th>
+            <p-columnFilter type="text" field="fantasia"></p-columnFilter>
+          </th>
+          <th>
+            <!-- <p-columnFilter field="estado" matchMode="in" [showMenu]="false">
+              <ng-template
+                pTemplate="filter"
+                let-value
+                let-filter="filterCallback"
+              >
+                <p-dropdown
+                  [options]="estados"
+                  optionLabel="estado"
+                ></p-dropdown>
+              </ng-template>
+            </p-columnFilter> -->
             <p-columnFilter
-              field="representative"
-              matchMode="in"
+              field="estado"
+              matchMode="equals"
               [showMenu]="false"
             >
               <ng-template
@@ -141,28 +208,16 @@
                 let-filter="filterCallback"
               >
                 <p-dropdown
-                  formControlName="city"
-                  [options]="cities"
-                  optionLabel="name"
-                ></p-dropdown>
+                  [options]="estados"
+                  formControlName="estadoControl"
+                  (onChange)="filter()"
+                  placeholder="Any"
+                  [showClear]="true"
+                  optionLabel="estado"
+                >
+                </p-dropdown>
               </ng-template>
             </p-columnFilter>
-          </th>
-          <th>
-            <p-columnFilter
-              field="status"
-              matchMode="equals"
-              [showMenu]="false"
-            >
-              <p-dropdown
-                formControlName="city"
-                [options]="cities"
-                optionLabel="name"
-              ></p-dropdown>
-            </p-columnFilter>
-          </th>
-          <th>
-            <p-columnFilter type="boolean" field="verified"></p-columnFilter>
           </th>
         </tr>
       </ng-template>
