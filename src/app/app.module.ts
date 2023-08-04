@@ -28,6 +28,10 @@ import { TableModule } from 'primeng/table';
 import { CambiarColorEnabledPipe } from './proveedores/pipes/cambiar-color-enabled.pipe';
 import { TagModule } from 'primeng/tag';
 import { CargarVentaComponent } from './ventas/components/cargar-venta/cargar-venta.component';
+import { CargarClienteComponent } from './clientes/components/cargar-cliente/cargar-cliente.component';
+import { ClientesComponent } from './clientes/clientes/clientes.component';
+import { SociedadesComponent } from './clientes/components/sociedades/sociedades.component';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,9 @@ import { CargarVentaComponent } from './ventas/components/cargar-venta/cargar-ve
     ModificarProveedorComponent,
     CambiarColorEnabledPipe,
     CargarVentaComponent,
+    CargarClienteComponent,
+    ClientesComponent,
+    SociedadesComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +68,7 @@ import { CargarVentaComponent } from './ventas/components/cargar-venta/cargar-ve
     TableModule,
     MultiSelectModule,
     TagModule,
+    BreadcrumbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

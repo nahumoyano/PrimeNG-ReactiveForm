@@ -1,0 +1,528 @@
+<!-- <app-navbar></app-navbar> -->
+
+<div class="m-4">
+  <app-clientes></app-clientes>
+  <form class="card p-4" [formGroup]="formulario">
+    <div class="grid p-fluid">
+      <!-- primer columna -->
+      <div class="col-12 md:col-4 gap-4">
+        <!-- name -->
+        <div class="col m-0 p-0">
+          <div class="p-inputgroup">
+            <input
+              type="text"
+              pInputText
+              placeholder="Nombre "
+              formControlName="name"
+              [class.ng-invalid]="
+                formulario.get('name')?.touched &&
+                formulario.get('name')?.hasError('required')
+              "
+            />
+          </div>
+          <span
+            [ngClass]="
+              formulario.get('name')?.touched &&
+              formulario.get('name')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >El campo nombre o CUIT, es requerido</span
+          >
+        </div>
+        <!-- direction -->
+        <div class="col m-0 p-0">
+          <div class="p-inputgroup mt-2">
+            <input
+              type="text"
+              pInputText
+              placeholder="Dirección"
+              formControlName="direction"
+              [class.ng-invalid]="
+                formulario.get('direction')?.touched &&
+                formulario.get('direction')?.hasError('required')
+              "
+            />
+          </div>
+          <span
+            [ngClass]="
+              formulario.get('direction')?.touched &&
+              formulario.get('direction')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >El campo dirección es requerido</span
+          >
+        </div>
+        <!-- city -->
+        <div class="mt-2 col p-0">
+          <p-dropdown
+            formControlName="city"
+            [options]="cities"
+            optionLabel="name"
+            [class.ng-invalid]="
+              formulario.get('city')?.touched &&
+              formulario.get('city')?.hasError('required')
+            "
+          ></p-dropdown>
+          <span
+            [ngClass]="
+              formulario.get('city')?.touched &&
+              formulario.get('city')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >Elija una opción</span
+          >
+        </div>
+        <!-- phone -->
+        <div class="col p-0">
+          <div class="p-inputgroup mt-2">
+            <input
+              type="text"
+              pInputText
+              placeholder="Celular"
+              formControlName="phone"
+              [class.ng-invalid]="
+                formulario.get('phone')?.touched &&
+                formulario.get('phone')?.hasError('required')
+              "
+            />
+          </div>
+          <span
+            [ngClass]="
+              formulario.get('phone')?.touched &&
+              formulario.get('phone')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >El campo celular es requerido</span
+          >
+        </div>
+        <!-- web site -->
+        <div class="col p-0">
+          <div class="p-inputgroup mt-2">
+            <input
+              type="text"
+              pInputText
+              placeholder="Sitio Web"
+              formControlName="webSite"
+              [class.ng-invalid]="
+                formulario.get('webSite')?.touched &&
+                formulario.get('webSite')?.hasError('required')
+              "
+            />
+          </div>
+          <span
+            [ngClass]="
+              formulario.get('webSite')?.touched &&
+              formulario.get('webSite')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >El campo sitio web es requerido</span
+          >
+        </div>
+        <!-- ino.bruto -->
+        <div class="col p-0">
+          <div class="p-inputgroup mt-2">
+            <input
+              type="text"
+              pInputText
+              placeholder="Ino. Brut"
+              formControlName="inoBruto"
+              [class.ng-invalid]="
+                formulario.get('inoBruto')?.touched &&
+                formulario.get('inoBruto')?.hasError('required')
+              "
+            />
+          </div>
+          <span
+            [ngClass]="
+              formulario.get('inoBruto')?.touched &&
+              formulario.get('inoBruto')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >El campo Ino. Bruto es requerido</span
+          >
+        </div>
+      </div>
+
+      <!-- segunda columna -->
+      <div class="col-12 md:col-4 gap-4">
+        <!-- IVA -->
+        <div class="">
+          <p-dropdown
+            formControlName="iva"
+            [options]="iva"
+            optionLabel="type"
+            [class.ng-invalid]="
+              formulario.get('iva')?.touched &&
+              formulario.get('iva')?.hasError('required')
+            "
+          ></p-dropdown>
+          <span
+            [ngClass]="
+              formulario.get('iva')?.touched &&
+              formulario.get('iva')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >El campo Ino. Bruto es requerido</span
+          >
+        </div>
+        <!-- TIPO DOC && DOC-->
+        <div class="col-12 flex gap-2 mt-2 p-0">
+          <!-- TIPO DOC -->
+          <div class="col p-0 col-6">
+            <p-dropdown
+              formControlName="tipoDoc"
+              [options]="tipoDoc"
+              optionLabel="type"
+              [class.ng-invalid]="
+                formulario.get('tipoDoc')?.touched &&
+                formulario.get('tipoDoc')?.hasError('required')
+              "
+            ></p-dropdown>
+            <span
+              [ngClass]="
+                formulario.get('tipoDoc')?.touched &&
+                formulario.get('tipoDoc')?.hasError('required')
+                  ? 'error px-2'
+                  : 'hidden'
+              "
+              >Elija una opción</span
+            >
+          </div>
+          <!-- doc -->
+          <div class="col p-0">
+            <div class="p-inputgroup">
+              <input
+                type="text"
+                pInputText
+                placeholder="Nro. Doc"
+                formControlName="doc"
+                [class.ng-invalid]="
+                  formulario.get('doc')?.touched &&
+                  formulario.get('doc')?.hasError('required')
+                "
+              />
+            </div>
+            <span
+              [ngClass]="
+                formulario.get('doc')?.touched &&
+                formulario.get('doc')?.hasError('required')
+                  ? 'error px-2'
+                  : 'hidden'
+              "
+              >El campo Nro. Doc es requerido</span
+            >
+          </div>
+        </div>
+        <!-- province -->
+        <div class="col p-0">
+          <div class="p-inputgroup mt-2">
+            <input
+              type="text"
+              pInputText
+              placeholder="Provincia"
+              formControlName="province"
+              [class.ng-invalid]="
+                formulario.get('province')?.touched &&
+                formulario.get('province')?.hasError('required')
+              "
+            />
+          </div>
+          <span
+            [ngClass]="
+              formulario.get('province')?.touched &&
+              formulario.get('province')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >El campo Provincia es requerido</span
+          >
+        </div>
+        <!-- email -->
+        <div class="col p-0">
+          <div class="p-inputgroup mt-2">
+            <input
+              type="text"
+              pInputText
+              placeholder="Email"
+              formControlName="email"
+              [class.ng-invalid]="
+                formulario.get('email')?.touched &&
+                formulario.get('email')?.hasError('required')
+              "
+            />
+          </div>
+          <span
+            [ngClass]="
+              formulario.get('email')?.touched &&
+              formulario.get('email')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >El campo Email es requerido</span
+          >
+        </div>
+        <!-- checkbox -->
+        <div class="col-12 col mt-2 p-0">
+          <div class="flex align-items-center justify-content-between">
+            <div class="flex align-items-center gap-2">
+              <p-checkbox
+                formControlName="check"
+                value="New York"
+                inputId="ny"
+                [class.ng-invalid]="
+                  formulario.get('check')?.touched &&
+                  formulario.get('check')?.hasError('required')
+                "
+              ></p-checkbox>
+              <label for="ny">Deshabilitar</label>
+            </div>
+            <div class="flex align-items-center gap-2">
+              <p-checkbox
+                formControlName="check"
+                value="New York"
+                inputId="ny"
+                [class.ng-invalid]="
+                  formulario.get('check')?.touched &&
+                  formulario.get('check')?.hasError('required')
+                "
+              ></p-checkbox>
+              <label for="ny">Habilitar</label>
+            </div>
+          </div>
+          <span
+            [ngClass]="
+              formulario.get('check')?.touched &&
+              formulario.get('check')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >Elija una opción</span
+          >
+        </div>
+        <!-- tipo prov && moneda -->
+        <div class="col-12 flex gap-2 mt-2 p-0">
+          <!-- TIPO prov -->
+          <div class="col p-0 col-6">
+            <p-dropdown
+              formControlName="tipoProv"
+              [options]="tipoProv"
+              optionLabel="type"
+              [class.ng-invalid]="
+                formulario.get('tipoProv')?.touched &&
+                formulario.get('tipoProv')?.hasError('required')
+              "
+            ></p-dropdown>
+            <span
+              [ngClass]="
+                formulario.get('tipoProv')?.touched &&
+                formulario.get('tipoProv')?.hasError('required')
+                  ? 'error px-2'
+                  : 'hidden'
+              "
+              >Elija una opción</span
+            >
+          </div>
+          <!-- MONEDA -->
+          <div class="col p-0 col-6">
+            <p-dropdown
+              formControlName="moneda"
+              [options]="tipoDoc"
+              optionLabel="type"
+              [class.ng-invalid]="
+                formulario.get('moneda')?.touched &&
+                formulario.get('moneda')?.hasError('required')
+              "
+            ></p-dropdown>
+            <span
+              [ngClass]="
+                formulario.get('moneda')?.touched &&
+                formulario.get('moneda')?.hasError('required')
+                  ? 'error px-2'
+                  : 'hidden'
+              "
+              >Elija una opción</span
+            >
+          </div>
+        </div>
+        <!-- ALIC.RET && SOTCK VENTA -->
+        <div class="col-12 flex gap-2 mt-2 p-0">
+          <!-- ALIC.RET -->
+          <div class="col p-0">
+            <div class="p-inputgroup">
+              <input
+                type="text"
+                pInputText
+                formControlName="alicRet"
+                placeholder="Alic. Ret"
+                [class.ng-invalid]="
+                  formulario.get('alicRet')?.touched &&
+                  formulario.get('alicRet')?.hasError('required')
+                "
+              />
+            </div>
+            <span
+              [ngClass]="
+                formulario.get('alicRet')?.touched &&
+                formulario.get('alicRet')?.hasError('required')
+                  ? 'error px-2'
+                  : 'hidden'
+              "
+              >El campo Alic. Ret es requerido</span
+            >
+          </div>
+          <!-- STOCK VENTA -->
+          <div class="flex align-items-center gap-2">
+            <p-checkbox
+              formControlName="stockVenta"
+              value="New York"
+              inputId="ny"
+            ></p-checkbox>
+            <label for="ny">Stock por venta</label>
+          </div>
+        </div>
+        <!-- f. ultima lista && nro lista -->
+        <div class="col-12 flex gap-2 mt-2 p-0">
+          <!-- f.ultima lista -->
+          <div class="col-6 p-0">
+            <div class="p-inputgroup">
+              <input
+                type="text"
+                pInputText
+                formControlName="fUltimaLista"
+                placeholder="F. Ultima Lista"
+                [class.ng-invalid]="
+                  formulario.get('fUltimaLista')?.touched &&
+                  formulario.get('fUltimaLista')?.hasError('required')
+                "
+              />
+            </div>
+            <span
+              [ngClass]="
+                formulario.get('fUltimaLista')?.touched &&
+                formulario.get('fUltimaLista')?.hasError('required')
+                  ? 'error px-2'
+                  : 'hidden'
+              "
+              >El campo F. Ultima Lista es requerido</span
+            >
+          </div>
+          <div class="col p-0">
+            <div class="p-inputgroup">
+              <input
+                type="text"
+                pInputText
+                placeholder="Nro. Lista"
+                formControlName="nroLista"
+                [class.ng-invalid]="
+                  formulario.get('nroLista')?.touched &&
+                  formulario.get('nroLista')?.hasError('required')
+                "
+              />
+            </div>
+            <span
+              [ngClass]="
+                formulario.get('nroLista')?.touched &&
+                formulario.get('nroLista')?.hasError('required')
+                  ? 'error px-2'
+                  : 'hidden'
+              "
+              >El campo Nro. Lista es requerido</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- tercer columna -->
+      <div class="col-12 md:col-4 gap-4">
+        <!-- fantasia -->
+        <div class="col p-0">
+          <div class="p-inputgroup">
+            <input
+              type="text"
+              pInputText
+              placeholder="Fantasía"
+              formControlName="fantasia"
+              [class.ng-invalid]="
+                formulario.get('fantasia')?.touched &&
+                formulario.get('fantasia')?.hasError('required')
+              "
+            />
+          </div>
+          <span
+            [ngClass]="
+              formulario.get('fantasia')?.touched &&
+              formulario.get('fantasia')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >El campo Fantasia es requerido</span
+          >
+        </div>
+        <!-- grupos -->
+        <div class="mt-2">
+          <p-dropdown
+            formControlName="grupos"
+            [options]="grupos"
+            optionLabel="type"
+            [class.ng-invalid]="
+              formulario.get('grupos')?.touched &&
+              formulario.get('grupos')?.hasError('required')
+            "
+          ></p-dropdown>
+          <span
+            [ngClass]="
+              formulario.get('grupos')?.touched &&
+              formulario.get('grupos')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >Elija una opción</span
+          >
+        </div>
+        <!-- ret Iib -->
+        <div class="mt-2">
+          <p-dropdown
+            formControlName="retIib"
+            [options]="retIib"
+            optionLabel="type"
+            [class.ng-invalid]="
+              formulario.get('retIib')?.touched &&
+              formulario.get('retIib')?.hasError('required')
+            "
+          ></p-dropdown>
+          <span
+            [ngClass]="
+              formulario.get('retIib')?.touched &&
+              formulario.get('retIib')?.hasError('required')
+                ? 'error px-2'
+                : 'hidden'
+            "
+            >Elija una opción</span
+          >
+        </div>
+        <!-- observacinoes -->
+        <div class="p-inputgroup mt-2">
+          <textarea
+            [rows]="5"
+            [cols]="30"
+            pInputTextarea
+            [autoResize]="true"
+            formControlName="observaciones"
+            placeholder="Observaciones"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="border">
+      <app-contactos></app-contactos>
+    </div>
+  </form>
+</div>

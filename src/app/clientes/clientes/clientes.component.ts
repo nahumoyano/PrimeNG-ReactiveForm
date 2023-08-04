@@ -1,47 +1,49 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { MessageService } from 'primeng/api';
+import { MenuItem, MessageService } from 'primeng/api';
 
 @Component({
-  selector: 'app-cargar-venta',
-  templateUrl: './cargar-venta.component.html',
-  styleUrls: ['./cargar-venta.component.css'],
+  selector: 'app-clientes',
+  templateUrl: './clientes.component.html',
+  styleUrls: ['./clientes.component.css'],
   providers: [MessageService],
 })
-export class CargarVentaComponent implements OnInit {
+export class ClientesComponent implements OnInit {
   formulario: FormGroup;
 
-  labels: any[];
-  items: any[];
+  items: MenuItem[];
+  labels: MenuItem[];
+  home: MenuItem;
 
   constructor(private messageService: MessageService) {}
 
   ngOnInit(): void {
     this.items = [
       {
-        label: 'Proveedores',
+        label: 'Sociedades',
+        routerLink: '/clientes/cargar-cliente/sociedades',
       },
-      {
-        label: 'Datos Bancarios',
-      },
-      {
-        label: 'Descuentos y Premios',
-      },
-      {
-        label: 'Información de Pago',
-      },
+      { label: 'Notebook' },
+      { label: 'Accessories' },
+      { label: 'Backpacks' },
+      { label: 'Item' },
     ];
+
+    this.home = {
+      label: 'Datos Generales',
+      routerLink: '/clientes/gestion-de-clientes/cargar-cliente',
+    };
 
     this.labels = [
       {
-        label: 'Proveedores',
+        label: 'Clientes',
       },
       {
-        label: 'Gestión de Proveedores',
+        label: 'Gestión de Clientes',
         icon: 'pi pi-chevron-right',
       },
       {
-        label: 'Cargar Proveedores',
+        label: 'Cargar Clientes',
         icon: 'pi pi-chevron-right',
       },
     ];

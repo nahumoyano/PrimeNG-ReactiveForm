@@ -11,27 +11,38 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.items = [
+      // dashboard
       {
         label: 'Dashboard',
         icon: 'pi pi-home',
         routerLink: '/dashboard',
         styleClass: 'custom-menu-item',
       },
+      // clientes
       {
         label: 'Clientes',
-        icon: 'pi pi-user',
+        icon: 'pi pi-user-edit',
         items: [
           {
             label: 'Gestión de Clientes',
 
             items: [
-              { label: 'Cargar Clientes', icon: 'pi pi-user' },
-              { label: 'Modificar Clientes', icon: 'pi pi-user' },
-              { label: 'Eliminar Clientes', icon: 'pi pi-user' },
+              {
+                label: 'Cargar Cliente',
+                icon: 'pi pi-user',
+                routerLink: '/clientes/gestion-de-clientes/cargar-cliente',
+              },
+              {
+                label: 'Modificar Proveedor',
+                icon: 'pi pi-user',
+                routerLink: '/proveedores/modificar-proveedor',
+              },
+              { label: 'Eliminar Proveedor', icon: 'pi pi-user' },
             ],
           },
         ],
       },
+      // proveedores
       {
         label: 'Proveedores',
         icon: 'pi pi-user-edit',
@@ -55,23 +66,12 @@ export class SidebarComponent implements OnInit {
           },
         ],
       },
+
+      // ventas
       {
         label: 'Ventas',
         icon: 'pi pi-user-edit',
-        items: [
-          {
-            label: 'Gestión de Ventas',
-
-            items: [
-              {
-                label: 'Presupuestos',
-                icon: 'pi pi-user',
-                routerLink: '/proveedores/cargar-proveedor',
-                items: [{ label: 'Cargar Presupuesto' }],
-              },
-            ],
-          },
-        ],
+        routerLink: '/ventas/gestion-de-ventas/presupuestos/cargar-venta',
       },
     ];
   }

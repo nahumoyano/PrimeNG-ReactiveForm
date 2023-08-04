@@ -4,6 +4,8 @@ import { CargarProveedorComponent } from './proveedores/components/cargar-provee
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ModificarProveedorComponent } from './proveedores/components/modificar-proveedor/modificar-proveedor.component';
 import { CargarVentaComponent } from './ventas/components/cargar-venta/cargar-venta.component';
+import { CargarClienteComponent } from './clientes/components/cargar-cliente/cargar-cliente.component';
+import { ClientesComponent } from './clientes/clientes/clientes.component';
 
 const routes: Routes = [
   // dashboard
@@ -16,8 +18,18 @@ const routes: Routes = [
   },
   // ventas
   {
-    path: 'ventas/gestion-de-ventas/presupuesto/cargar-presupuesto',
+    path: 'ventas/gestion-de-ventas/presupuestos/cargar-venta',
     component: CargarVentaComponent,
+  },
+  // clientes
+  { path: 'clientes', component: ClientesComponent },
+  {
+    path: 'clientes/gestion-de-clientes/cargar-cliente',
+    component: CargarClienteComponent,
+  },
+  {
+    path: 'clientes/cargar-cliente/sociedades',
+    component: CargarClienteComponent,
   },
 ];
 
