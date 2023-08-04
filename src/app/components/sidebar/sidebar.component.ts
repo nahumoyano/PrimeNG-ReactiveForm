@@ -25,19 +25,13 @@ export class SidebarComponent implements OnInit {
         items: [
           {
             label: 'Gestión de Clientes',
-
             items: [
               {
                 label: 'Cargar Cliente',
                 icon: 'pi pi-user',
-                routerLink: '/clientes/gestion-de-clientes/cargar-cliente',
+                routerLink: '/cargar-cliente',
               },
-              {
-                label: 'Modificar Proveedor',
-                icon: 'pi pi-user',
-                routerLink: '/proveedores/modificar-proveedor',
-              },
-              { label: 'Eliminar Proveedor', icon: 'pi pi-user' },
+              // Otras opciones de gestión de clientes aquí
             ],
           },
         ],

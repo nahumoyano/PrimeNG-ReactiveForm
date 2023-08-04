@@ -32,6 +32,7 @@ import { CargarClienteComponent } from './clientes/components/cargar-cliente/car
 import { ClientesComponent } from './clientes/clientes/clientes.component';
 import { SociedadesComponent } from './clientes/components/sociedades/sociedades.component';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     CargarClienteComponent,
     ClientesComponent,
     SociedadesComponent,
+    BreadcrumbComponent,
   ],
   imports: [
     BrowserModule,

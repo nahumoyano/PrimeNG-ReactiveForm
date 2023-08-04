@@ -6,6 +6,7 @@ import { ModificarProveedorComponent } from './proveedores/components/modificar-
 import { CargarVentaComponent } from './ventas/components/cargar-venta/cargar-venta.component';
 import { CargarClienteComponent } from './clientes/components/cargar-cliente/cargar-cliente.component';
 import { ClientesComponent } from './clientes/clientes/clientes.component';
+import { SociedadesComponent } from './clientes/components/sociedades/sociedades.component';
 
 const routes: Routes = [
   // dashboard
@@ -24,12 +25,21 @@ const routes: Routes = [
   // clientes
   { path: 'clientes', component: ClientesComponent },
   {
-    path: 'clientes/gestion-de-clientes/cargar-cliente',
+    path: 'cargar-cliente',
     component: CargarClienteComponent,
-  },
-  {
-    path: 'clientes/cargar-cliente/sociedades',
-    component: CargarClienteComponent,
+    children: [
+      {
+        path: 'datos-generales',
+        component: CargarClienteComponent,
+        data: { breadcrumb: 'Datos Generales' },
+      },
+      {
+        path: 'sociedades',
+        component: SociedadesComponent,
+        data: { breadcrumb: 'Sociedades' },
+      },
+      // Otras subrutas aquí
+    ],
   },
 ];
 
