@@ -1,101 +1,12 @@
-<div class="m-4 content">
+<div class="m-4 content" style="max-width: 65%">
   <p-menubar [model]="labels" class="m-4">
     <p-button routerLink="/proveedores/cargar-proveedor">
       <i class="pi pi-plus mr-2"></i>
       Nuevo</p-button
     >
   </p-menubar>
-  <!-- <p-table
-    [value]="listados"
-    [tableStyle]="{ 'min-width': '60rem' }"
-    [paginator]="true"
-    [rows]="5"
-    [showCurrentPageReport]="true"
-    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-    [rowsPerPageOptions]="[10, 25, 50]"
-    class="mt-2"
-  >
-    <ng-template pTemplate="header">
-      <tr>
-        <th pSortableColumn="CP">N° <p-sortIcon field="CP"></p-sortIcon></th>
-        <th pSortableColumn="ID">
-          Nombre
-          <p-sortIcon field="ID"></p-sortIcon>
-        </th>
-        <th pSortableColumn="CIUDADID">
-          Cuit <p-sortIcon field="CIUDADID"></p-sortIcon>
-        </th>
-        <th pSortableColumn="PROVINCIA">
-          Teléfono <p-sortIcon field="PROVINCIA"></p-sortIcon>
-        </th>
-        <th pSortableColumn="PROVINCIA">
-          Email <p-sortIcon field="PROVINCIA"></p-sortIcon>
-        </th>
-        <th pSortableColumn="PROVINCIA">
-          Dirección <p-sortIcon field="PROVINCIA"></p-sortIcon>
-        </th>
-        <th pSortableColumn="PROVINCIA">
-          Localidad <p-sortIcon field="PROVINCIA"></p-sortIcon>
-        </th>
-        <th pSortableColumn="PROVINCIA">
-          Provincia <p-sortIcon field="PROVINCIA"></p-sortIcon>
-        </th>
-        <th pSortableColumn="PROVINCIA">
-          Tipo <p-sortIcon field="PROVINCIA"></p-sortIcon>
-        </th>
-        <th pSortableColumn="PROVINCIA">
-          Fantasia <p-sortIcon field="PROVINCIA"></p-sortIcon>
-        </th>
-        <th pSortableColumn="PROVINCIA" class="pSortableColumn">
-          Estado <p-sortIcon field="PROVINCIA"></p-sortIcon>
-        </th>
-        <th>ACCIÓN <p-sortIcon></p-sortIcon></th>
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-listado>
-      <tr>
-        <td>{{ listado.num }}</td>
-        <td>{{ listado.nombre }}</td>
-        <td>{{ listado.cuit }}</td>
-        <td>{{ listado.telefono }}</td>
-        <td>{{ listado.email }}</td>
-        <td>{{ listado.direccion }}</td>
-        <td>{{ listado.localidad }}</td>
-        <td>{{ listado.provincia }}</td>
-        <td>{{ listado.tipo }}</td>
-        <td>{{ listado.fantasia }}</td>
-        <td
-          [style.background-color]="listado.estado | cambiarColorEnabled"
-          style="color: #fff"
-        >
-          {{ listado.estado }}
-        </td>
-        <td>
-          <div class="card flex justify-content-center">
-            <p-button [routerLink]="['/editar-provincia', listado.ID]"
-              >Editar</p-button
-            >
-          </div>
-        </td>
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="paginatorleft">
-      <p-button
-        type="button"
-        icon="pi pi-plus"
-        styleClass="p-button-text"
-      ></p-button>
-    </ng-template>
-    <ng-template pTemplate="paginatorright">
-      <p-button
-        type="button"
-        icon="pi pi-cloud"
-        styleClass="p-button-text"
-      ></p-button>
-    </ng-template>
-  </p-table> -->
 
-  <div class="card">
+  <div class="card" style="max-width: 100%; overflow-x: auto">
     <p-table
       #dt2
       #table
@@ -107,13 +18,7 @@
       [loading]="loading"
       [paginator]="true"
       currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-      [globalFilterFields]="[
-        'name',
-        'country.name',
-        'representative.name',
-        'status'
-      ]"
-      [tableStyle]="{ 'min-width': '45rem' }"
+      [tableStyle]="{ 'max-width': '45rem' }"
     >
       <ng-template pTemplate="header">
         <tr>
@@ -185,39 +90,7 @@
             <p-columnFilter type="text" field="fantasia"></p-columnFilter>
           </th>
           <th>
-            <!-- <p-columnFilter field="estado" matchMode="in" [showMenu]="false">
-              <ng-template
-                pTemplate="filter"
-                let-value
-                let-filter="filterCallback"
-              >
-                <p-dropdown
-                  [options]="estados"
-                  optionLabel="estado"
-                ></p-dropdown>
-              </ng-template>
-            </p-columnFilter> -->
-            <p-columnFilter
-              field="estado"
-              matchMode="equals"
-              [showMenu]="false"
-            >
-              <ng-template
-                pTemplate="filter"
-                let-value
-                let-filter="filterCallback"
-              >
-                <p-dropdown
-                  [options]="estados"
-                  formControlName="estadoControl"
-                  (onChange)="filter()"
-                  placeholder="Any"
-                  [showClear]="true"
-                  optionLabel="estado"
-                >
-                </p-dropdown>
-              </ng-template>
-            </p-columnFilter>
+            <p-columnFilter type="text" field="estado"></p-columnFilter>
           </th>
         </tr>
       </ng-template>

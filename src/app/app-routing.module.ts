@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CargarProveedorComponent } from './proveedores/components/cargar-proveedor/cargar-proveedor.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ModificarProveedorComponent } from './proveedores/components/modificar-proveedor/modificar-proveedor.component';
+import { CargarVentaComponent } from './ventas/components/cargar-venta/cargar-venta.component';
 
 const routes: Routes = [
   // dashboard
@@ -12,6 +13,11 @@ const routes: Routes = [
   {
     path: 'proveedores/modificar-proveedor',
     component: ModificarProveedorComponent,
+  },
+  // ventas
+  {
+    path: 'ventas/gestion-de-ventas/presupuesto/cargar-presupuesto',
+    component: CargarVentaComponent,
   },
 ];
 

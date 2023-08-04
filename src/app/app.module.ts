@@ -27,6 +27,7 @@ import { ModificarProveedorComponent } from './proveedores/components/modificar-
 import { TableModule } from 'primeng/table';
 import { CambiarColorEnabledPipe } from './proveedores/pipes/cambiar-color-enabled.pipe';
 import { TagModule } from 'primeng/tag';
+import { CargarVentaComponent } from './ventas/components/cargar-venta/cargar-venta.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { TagModule } from 'primeng/tag';
     LinksTopComponent,
     ModificarProveedorComponent,
     CambiarColorEnabledPipe,
+    CargarVentaComponent,
   ],
   imports: [
     BrowserModule,

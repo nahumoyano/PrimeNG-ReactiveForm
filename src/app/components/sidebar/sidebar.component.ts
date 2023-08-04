@@ -55,6 +55,24 @@ export class SidebarComponent implements OnInit {
           },
         ],
       },
+      {
+        label: 'Ventas',
+        icon: 'pi pi-user-edit',
+        items: [
+          {
+            label: 'Gestión de Ventas',
+
+            items: [
+              {
+                label: 'Presupuestos',
+                icon: 'pi pi-user',
+                routerLink: '/proveedores/cargar-proveedor',
+                items: [{ label: 'Cargar Presupuesto' }],
+              },
+            ],
+          },
+        ],
+      },
     ];
   }
 }
