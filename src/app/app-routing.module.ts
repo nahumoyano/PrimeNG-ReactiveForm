@@ -25,21 +25,21 @@ const routes: Routes = [
   // clientes
   { path: 'clientes', component: ClientesComponent },
   {
-    path: 'cargar-cliente',
+    path: 'clientes/gestion-de-clientes/cargar-cliente',
     component: CargarClienteComponent,
-    children: [
-      {
-        path: 'datos-generales',
-        component: CargarClienteComponent,
-        data: { breadcrumb: 'Datos Generales' },
-      },
-      {
-        path: 'sociedades',
-        component: SociedadesComponent,
-        data: { breadcrumb: 'Sociedades' },
-      },
-      // Otras subrutas aquí
-    ],
+    // children: [
+    //   {
+    //     path: 'datos-generales',
+    //     component: DatosGeneralesComponent,
+    //     data: { breadcrumb: 'Datos Generales' },
+    //   },
+    //   {
+    //     path: 'sociedades',
+    //     component: SociedadesComponent,
+    //     data: { breadcrumb: 'Sociedades' },
+    //   },
+    //   // Otras subrutas aquí
+    // ],
   },
 ];
 
