@@ -34,6 +34,7 @@ import { SociedadesComponent } from './clientes/components/sociedades/sociedades
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { ListadoClientesComponent } from './clientes/components/listado-clientes/listado-clientes.component';
+import { LoginComponent } from './login/components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { ListadoClientesComponent } from './clientes/components/listado-clientes
     SociedadesComponent,
     BreadcrumbComponent,
     ListadoClientesComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
