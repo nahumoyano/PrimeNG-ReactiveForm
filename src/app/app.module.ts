@@ -35,6 +35,7 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { ListadoClientesComponent } from './clientes/components/listado-clientes/listado-clientes.component';
 import { LoginComponent } from './login/components/login/login.component';
+import { CargarPagoALoteDeFacturaComponent } from './compras/components/cargar-pago-a-lote-de-factura/cargar-pago-a-lote-de-factura.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { LoginComponent } from './login/components/login/login.component';
     BreadcrumbComponent,
     ListadoClientesComponent,
     LoginComponent,
+    CargarPagoALoteDeFacturaComponent,
   ],
   imports: [
     BrowserModule,

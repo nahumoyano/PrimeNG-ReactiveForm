@@ -1,1 +1,73 @@
-<p>login works!</p>
+<p-toast key="toast"></p-toast>
+
+<div class="login-body">
+  <div id="login-wrapper">
+    <div id="login-container">
+      <span class="title"><h5>Liberasoft</h5></span>
+      <form [formGroup]="authForm">
+        <div class="p-grid p-fluid">
+          <div class="p-col-12">
+            <input
+              formControlName="username"
+              type="text"
+              [ngStyle]="{
+                border:
+                  this.authForm.get('username')?.invalid && loginSubmited
+                    ? '1px solid #B00020'
+                    : ''
+              }"
+              autocomplete="off"
+              pInputText
+              placeholder="Usuario"
+            />
+          </div>
+          <div class="p-col-12">
+            <input
+              [ngStyle]="{
+                border:
+                  this.authForm.get('password')?.invalid && loginSubmited
+                    ? '1px solid #B00020'
+                    : ''
+              }"
+              formControlName="password"
+              type="password"
+              autocomplete="off"
+              pInputText
+              placeholder="Contraseña"
+            />
+          </div>
+          <div class="p-col-12 p-md-6">
+            <span class="remember-me">Recuerdame</span>
+            <!-- <input  #checkboxEL (change)="onRememberChange(checkboxEL)" formControlName="rememberMe" type="checkbox"> -->
+          </div>
+          <div class="p-col-12 p-md-6">
+            <a href="#">Restablecer contraseña</a>
+          </div>
+          <div class="p-col-12">
+            <p-button
+              type="button"
+              label="Iniciar Sesion"
+              icon="pi pi-user"
+              (click)="onLoginSubmit()"
+            ></p-button>
+          </div>
+          <br />
+          <!-- <div class="p-col-12 p-md-6 p-text-left">
+                <i>  Build {{dateBuild}}</i>
+                </div>
+                <div class="p-col-12 p-md-6 p-text-right">
+                  <i>V {{version}}</i>  
+                </div>      -->
+        </div>
+      </form>
+    </div>
+    <!-- <div class="login-footer">  <p-button 
+                     type="button"
+                     label="x"
+                     icon="pi pi-user" 
+                     (click)="test()"
+                    
+                     ></p-button>
+</div> -->
+  </div>
+</div>

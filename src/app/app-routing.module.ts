@@ -7,6 +7,7 @@ import { CargarVentaComponent } from './ventas/components/cargar-venta/cargar-ve
 import { CargarClienteComponent } from './clientes/components/cargar-cliente/cargar-cliente.component';
 import { ClientesComponent } from './clientes/clientes/clientes.component';
 import { SociedadesComponent } from './clientes/components/sociedades/sociedades.component';
+import { LoginComponent } from './login/components/login/login.component';
 
 const routes: Routes = [
   // dashboard
@@ -41,6 +42,7 @@ const routes: Routes = [
     //   // Otras subrutas aquí
     // ],
   },
+  // { path: '/login', component: LoginComponent },
 ];
 
 @NgModule({

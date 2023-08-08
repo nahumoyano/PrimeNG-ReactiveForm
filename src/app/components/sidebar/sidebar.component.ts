@@ -72,6 +72,38 @@ export class SidebarComponent implements OnInit {
         icon: 'pi pi-user-edit',
         routerLink: '/ventas/gestion-de-ventas/presupuestos/cargar-venta',
       },
+      // compras
+      {
+        label: 'Compras',
+        icon: 'pi pi-calendar',
+        items: [
+          {
+            label: 'Gestión de Compras',
+
+            items: [
+              {
+                label: 'Nota de Compra',
+                items: [
+                  { label: 'Cargar Nota de Compra Por Proveedor' },
+                  { label: 'Modsificar Nota de Compra' },
+                ],
+              },
+              {
+                label: 'Recibo de Compra',
+                routerLink: '/proveedores/modificar-proveedor',
+              },
+              {
+                label: 'pagos',
+                items: [{ label: 'Cargar Pago a Lote de Facturas' }],
+              },
+            ],
+          },
+          {
+            label: 'Informes de Compras',
+            items: [{ label: 'Informe de Cta. Cte. proveedor' }],
+          },
+        ],
+      },
     ];
   }
 }
