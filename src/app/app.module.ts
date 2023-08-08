@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastModule } from 'primeng/toast';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +37,9 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
 import { ListadoClientesComponent } from './clientes/components/listado-clientes/listado-clientes.component';
 import { LoginComponent } from './login/components/login/login.component';
 import { CargarPagoALoteDeFacturaComponent } from './compras/components/cargar-pago-a-lote-de-factura/cargar-pago-a-lote-de-factura.component';
+import { ModificarNotaDeCompraComponent } from './compras/components/modificar-nota-de-compra/modificar-nota-de-compra.component';
+import { RemitoInternoComponent } from './stock/components/remito-interno/remito-interno.component';
+import { StockComponent } from './stock/stock.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +60,9 @@ import { CargarPagoALoteDeFacturaComponent } from './compras/components/cargar-p
     ListadoClientesComponent,
     LoginComponent,
     CargarPagoALoteDeFacturaComponent,
+    ModificarNotaDeCompraComponent,
+    RemitoInternoComponent,
+    StockComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +84,7 @@ import { CargarPagoALoteDeFacturaComponent } from './compras/components/cargar-p
     MultiSelectModule,
     TagModule,
     BreadcrumbModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

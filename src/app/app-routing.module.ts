@@ -42,7 +42,6 @@ const routes: Routes = [
     //   // Otras subrutas aquí
     // ],
   },
-  // { path: '/login', component: LoginComponent },
 ];
 
 @NgModule({

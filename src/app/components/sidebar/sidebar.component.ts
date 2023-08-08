@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-sidebar',
@@ -65,7 +64,6 @@ export class SidebarComponent implements OnInit {
           },
         ],
       },
-
       // ventas
       {
         label: 'Ventas',
@@ -75,6 +73,198 @@ export class SidebarComponent implements OnInit {
       // compras
       {
         label: 'Compras',
+        icon: 'pi pi-calendar',
+        items: [
+          {
+            label: 'Gestión de Compras',
+
+            items: [
+              {
+                label: 'Nota de Compra',
+                items: [
+                  { label: 'Cargar Nota de Compra Por Proveedor' },
+                  { label: 'Modsificar Nota de Compra' },
+                ],
+              },
+              {
+                label: 'Recibo de Compra',
+                routerLink: '/proveedores/modificar-proveedor',
+              },
+              {
+                label: 'pagos',
+                items: [{ label: 'Cargar Pago a Lote de Facturas' }],
+              },
+            ],
+          },
+          {
+            label: 'Informes de Compras',
+            items: [{ label: 'Informe de Cta. Cte. proveedor' }],
+          },
+        ],
+      },
+      // Stock
+      {
+        label: 'Stock',
+        icon: 'pi pi-calendar',
+        items: [
+          {
+            label: 'Gestión de Compras',
+
+            items: [
+              {
+                label: 'Nota de Compra',
+                items: [
+                  { label: 'Cargar Nota de Compra Por Proveedor' },
+                  { label: 'Modsificar Nota de Compra' },
+                ],
+              },
+              {
+                label: 'Recibo de Compra',
+                routerLink: '/proveedores/modificar-proveedor',
+              },
+              {
+                label: 'pagos',
+                items: [{ label: 'Cargar Pago a Lote de Facturas' }],
+              },
+            ],
+          },
+          {
+            label: 'Informes de Compras',
+            items: [{ label: 'Informe de Cta. Cte. proveedor' }],
+          },
+        ],
+      },
+      // caja y bancos
+      {
+        label: 'Caja y Bancos',
+        icon: 'pi pi-calendar',
+        items: [
+          {
+            label: 'Gestión de Compras',
+
+            items: [
+              {
+                label: 'Nota de Compra',
+                items: [
+                  { label: 'Cargar Nota de Compra Por Proveedor' },
+                  { label: 'Modsificar Nota de Compra' },
+                ],
+              },
+              {
+                label: 'Recibo de Compra',
+                routerLink: '/proveedores/modificar-proveedor',
+              },
+              {
+                label: 'pagos',
+                items: [{ label: 'Cargar Pago a Lote de Facturas' }],
+              },
+            ],
+          },
+          {
+            label: 'Informes de Compras',
+            items: [{ label: 'Informe de Cta. Cte. proveedor' }],
+          },
+        ],
+      },
+      // Contabilidad
+      {
+        label: 'Contabilidad',
+        icon: 'pi pi-calendar',
+        items: [
+          {
+            label: 'Gestión de Compras',
+
+            items: [
+              {
+                label: 'Nota de Compra',
+                items: [
+                  { label: 'Cargar Nota de Compra Por Proveedor' },
+                  { label: 'Modsificar Nota de Compra' },
+                ],
+              },
+              {
+                label: 'Recibo de Compra',
+                routerLink: '/proveedores/modificar-proveedor',
+              },
+              {
+                label: 'pagos',
+                items: [{ label: 'Cargar Pago a Lote de Facturas' }],
+              },
+            ],
+          },
+          {
+            label: 'Informes de Compras',
+            items: [{ label: 'Informe de Cta. Cte. proveedor' }],
+          },
+        ],
+      },
+      // Ecommerce
+      {
+        label: 'Ecommerce',
+        icon: 'pi pi-calendar',
+        items: [
+          {
+            label: 'Gestión de Compras',
+
+            items: [
+              {
+                label: 'Nota de Compra',
+                items: [
+                  { label: 'Cargar Nota de Compra Por Proveedor' },
+                  { label: 'Modsificar Nota de Compra' },
+                ],
+              },
+              {
+                label: 'Recibo de Compra',
+                routerLink: '/proveedores/modificar-proveedor',
+              },
+              {
+                label: 'pagos',
+                items: [{ label: 'Cargar Pago a Lote de Facturas' }],
+              },
+            ],
+          },
+          {
+            label: 'Informes de Compras',
+            items: [{ label: 'Informe de Cta. Cte. proveedor' }],
+          },
+        ],
+      },
+      // Herramientas
+      {
+        label: 'Herramientas',
+        icon: 'pi pi-calendar',
+        items: [
+          {
+            label: 'Gestión de Compras',
+
+            items: [
+              {
+                label: 'Nota de Compra',
+                items: [
+                  { label: 'Cargar Nota de Compra Por Proveedor' },
+                  { label: 'Modsificar Nota de Compra' },
+                ],
+              },
+              {
+                label: 'Recibo de Compra',
+                routerLink: '/proveedores/modificar-proveedor',
+              },
+              {
+                label: 'pagos',
+                items: [{ label: 'Cargar Pago a Lote de Facturas' }],
+              },
+            ],
+          },
+          {
+            label: 'Informes de Compras',
+            items: [{ label: 'Informe de Cta. Cte. proveedor' }],
+          },
+        ],
+      },
+      // WMS
+      {
+        label: 'WMS',
         icon: 'pi pi-calendar',
         items: [
           {

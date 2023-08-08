@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'http://api.dev.liberasoft.com.ar/api/',
+  dateBuild: '18/07/2023',
+  Version: '0.0.3',
 };
 
 /*
